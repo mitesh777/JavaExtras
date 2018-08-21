@@ -1,0 +1,9 @@
+package FileIO;
+
+import java.io.FileInputStream;
+
+public class CopyAnImage {
+	public static void main(String[] args) {
+		FileInputStream in = new FileInputStream("/home/user/Desktop/ImageCopy/image.jpeg");
+	}
+}

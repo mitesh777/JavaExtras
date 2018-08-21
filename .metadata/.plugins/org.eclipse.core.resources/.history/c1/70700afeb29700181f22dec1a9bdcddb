@@ -1,0 +1,51 @@
+package com.pratian.searchengine.search;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
+
+import com.pratian.searchengine.systemroots.impl.HiddenRootFinder;
+import com.pratian.searchengine.util.Console;
+
+public class FileSearcher {
+	private List<String> foundFilePaths = new LinkedList<String>();
+	public  List<String>  searchFile(File folderToSearch, File file) {
+
+		//File folder = new File(folderToSearch.getCanonicalPath());
+		File[] listOfFiles = folderToSearch.listFiles();
+		if(listOfFiles != null) {
+			for (int i = 0; i < listOfFiles.length; i++) {
+				if (listOfFiles[i].isFile()) {
+					if(listOfFiles[i].getName().contains(file.getName())) {
+						foundFilePaths.add(folderToSearch.getAbsolutePath());
+					}
+				} else if (listOfFiles[i].isDirectory()) {
+					searchFile(new File(listOfFiles[i].getAbsolutePath()), file);
+				}
+			}
+		}
+		return foundFilePaths;
+	}
+
+	public static void main(String[] args) {
+		FileSearcher fs = new FileSearcher();
+		String fileToSearch=null;
+		String folderToSearch=null;
+		try {
+			System.out.println("Enter folder to search");
+			folderToSearch = Console.readLine();
+			System.out.println("Enter file to search");
+			fileToSearch = Console.readLine();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+//		List<String> list = fs.searchFile(new File(folderToSearch), new File(fileToSearch));
+//		System.out.println(list);
+		List<String> list = new HiddenRootFinder().getSubDirectories();
+		System.out.println(list);
+
+	}
+}

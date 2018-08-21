@@ -1,0 +1,5 @@
+package com.pratian.searchengine.searchhistory;
+
+public class SearchHistory {
+
+}

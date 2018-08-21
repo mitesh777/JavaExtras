@@ -1,0 +1,11 @@
+package com.pratian.searchengine.searchhistory;
+
+import java.io.File;
+
+public class SearchHistory {
+	
+	public boolean ifExists(File file) {
+		File file = new File("/home/user/Desktop/searchlogs");
+	}
+	
+}

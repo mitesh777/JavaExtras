@@ -1,0 +1,41 @@
+package FileIO;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class CreateAndWriteInTextFile {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//write a code
+		
+		File file = new File("/home/user/Desktop/newDir2/abc2");
+		if(file.isDirectory()) {
+			System.out.println("already exists directory");
+		}
+		else {
+			boolean b = file.mkdirs();
+			System.out.println(b+" making the file");
+		}
+		//boolean b = file.mkdir();
+		//System.out.println(b);
+		file = new File("/home/user/Desktop/newDir2/abc2/text2.txt");
+		//file.setReadOnly();
+		byte[] data = {1,65,3,22};
+		FileOutputStream out;
+		try {
+			out = new FileOutputStream(file);
+			out.write(data);
+			out.close();
+			System.out.println("printed");
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+}

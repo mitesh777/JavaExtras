@@ -1,0 +1,27 @@
+package FileIO;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
+public class CreateAndWriteInTextFile {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//write a code
+		
+		File file = new File("/home/user/Desktop/newDir/newFile");
+		byte[] data = {1,4,3};
+		FileOutputStream out;
+		try {
+			out = new FileOutputStream(file);
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		out.write(data);
+		out.close();
+	}
+
+}

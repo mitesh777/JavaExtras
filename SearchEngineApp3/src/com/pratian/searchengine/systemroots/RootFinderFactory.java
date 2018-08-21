@@ -1,0 +1,19 @@
+package com.pratian.searchengine.systemroots;
+
+import com.pratian.searchengine.systemroots.impl.HiddenRootFinder;
+import com.pratian.searchengine.systemroots.impl.NonHiddenRootFinder;
+import com.pratian.searchengine.systemroots.impl.SystemRootFinder;
+
+public class RootFinderFactory {
+	public static RootFinder create(FolderTypes folderType) {
+		switch(folderType) {
+		case ALL : return new SystemRootFinder();
+
+		case NONHIDDEN : return new NonHiddenRootFinder();
+		
+		case HIDDEN : return new HiddenRootFinder();
+		
+		default : return null;
+	}
+	}
+}

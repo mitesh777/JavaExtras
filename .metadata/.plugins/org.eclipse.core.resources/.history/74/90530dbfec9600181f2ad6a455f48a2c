@@ -1,0 +1,26 @@
+package FileIO;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class CopyAnImage {
+	public static void main(String[] args) {
+		try {
+			FileInputStream in = new FileInputStream("/home/user/Desktop/ImageCopy/image.jpeg");
+			FileOutputStream out = new FileOutputStream("/home/user/Desktop/ImageCopy/copiedimage.jpeg");
+			int len;
+			System.out.println("here");
+			while((len=in.read())==-1) {
+				out.write(len);
+				System.out.println(len+"a");
+			}
+			System.out.println("b");
+		} catch (IOException e) {
+			
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

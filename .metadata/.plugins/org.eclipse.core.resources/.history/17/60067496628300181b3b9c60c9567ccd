@@ -1,0 +1,9 @@
+
+public class ShapeDemo {
+
+	public static void main(String[] args) {
+		AreaFinder result=new AreaFinder();
+	Circle s=new Circle(2,10);
+	result.display(s);
+	}
+}

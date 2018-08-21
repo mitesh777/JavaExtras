@@ -1,0 +1,5 @@
+package com.pratian.thread.util;
+
+public class SimpleThread {
+
+}

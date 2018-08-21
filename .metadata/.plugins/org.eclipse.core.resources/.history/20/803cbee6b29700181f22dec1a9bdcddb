@@ -1,0 +1,8 @@
+package com.pratian.searchengine.search;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class SearchResult {
+	private List<String> foundFilePaths = new LinkedList<String>();
+}

@@ -1,0 +1,15 @@
+package com.pratian.searchengine.abstractsystemroots;
+
+import java.util.List;
+
+import com.pratian.searchengine.systemroots.RootFinder;
+
+public abstract class AbstractRootFinder implements RootFinder {
+
+	@Override
+	public List<String> getSubDirectories() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

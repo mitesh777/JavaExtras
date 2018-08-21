@@ -1,0 +1,31 @@
+package com.pratian.searchengine.util;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.pratian.searchengine.search.FileSearcher;
+
+public class SearchManager {
+	public static void startSearch(String fileTOSearch, String folderToSearch, List<String> subDirectories) {
+		List<FileSearcher> fileSearcherList = new ArrayList<FileSearcher>();
+		for (String s : subDirectories) {
+			FileSearcher fs = new FileSearcher(new File(s), new File(fileTOSearch));
+			fileSearcherList.add(fs);
+			fs.start();
+		}
+
+		for (FileSearcher fs : fileSearcherList) {
+			try {
+				fs.join();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		for (FileSearcher fs : fileSearcherList) {
+			System.out.println(fs.getSearchResult());
+		}
+	}
+}

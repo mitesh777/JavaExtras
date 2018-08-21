@@ -1,0 +1,15 @@
+package com.pratian.thread.util;
+
+public class SimpleThread extends Thread{
+	
+	public SimpleThread(String s) {
+		super(s);
+	}
+	
+	public void run() {
+		for(int i=100;i>0;i--) {
+			//Thread.
+			System.out.println(getName() + " : "+i);
+		}
+	}
+}

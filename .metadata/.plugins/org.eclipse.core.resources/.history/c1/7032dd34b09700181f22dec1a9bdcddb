@@ -1,0 +1,7 @@
+package com.pratian.searchengine.systemroots;
+
+public class RootFinderFactory {
+	public static RootFinder getRootType(String type) {
+		
+	}
+}

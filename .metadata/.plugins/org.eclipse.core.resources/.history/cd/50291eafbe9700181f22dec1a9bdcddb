@@ -1,0 +1,7 @@
+package com.pratian.searchengine.systemroots;
+
+import java.util.List;
+
+public interface RootFinder {
+	List<String> getSubDirectories();
+}

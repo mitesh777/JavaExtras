@@ -1,0 +1,17 @@
+package com.pratian.searchengine.searchhistory;
+
+import java.io.File;
+
+public class SearchHistory {
+	
+	public boolean ifExists(String search) {
+		search.replace('.', '_');
+		search=search+".log";
+		File file = new File("/home/user/Desktop/searchLogs");
+		File[] allFiles = file.listFiles();
+		for(File f: allFiles) {
+			if(f.getName().equals(search));
+		}
+	}
+	
+}

@@ -1,0 +1,28 @@
+package com.pratian.thread.util;
+
+public class RunnableDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		//First method
+		
+//		MyRunnable myRunnable = new MyRunnable();
+//		Thread t1 = new Thread(myRunnable);
+//		Thread t2 = new Thread(myRunnable);
+//		Thread t3 = new Thread(myRunnable);
+//		Thread t4 = new Thread(myRunnable);
+//		
+//		t1.start();
+//		t2.start();
+//		t3.start();
+//		t4.start();
+		
+		MyRunnable myRunnable  = new MyRunnable();
+		MyRunnable myRunnable2 = new MyRunnable();
+		MyRunnable myRunnable3 = new MyRunnable();
+		MyRunnable myRunnable4 = new MyRunnable();
+	}
+
+}
